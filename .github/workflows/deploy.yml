@@ -28,11 +28,9 @@ jobs:
       - name: Build
         run: yarn build
 
-      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
-        with:
-          name: Jamie Gerrard Lievesley
-          email: jamie@jamiegl.co.uk
-          actor: JamieGerrardLievesley
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy
-        run: yarn deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: .build
+          git-config-name: Jamie Gerrard Lievesley
+          git-config-email: jamie@jamiegl.co.uk
