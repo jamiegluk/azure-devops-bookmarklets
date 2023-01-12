@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
-          node-version: "12"
+          node-version: "16"
       - name: Install
         run: yarn install
 
@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: yarn build
 
-      - uses: oleksiyrudenko/gha-git-credentials@v1
+      - uses: oleksiyrudenko/gha-git-credentials@v2
         with:
           name: Jamie Gerrard Lievesley
           email: jamie@jamiegl.co.uk
