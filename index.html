@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-GB" color-mode="user">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Azure DevOps Bookmarklets</title>
+    <meta name="author" content="Jamie Lievesley &lt;jamie@jamiegl.co.uk&gt; (https://jamiegl.co.uk)" />
+    <meta name="description" content="Browser bookmarklet utilities for helping with Azure DevOps" />
+    <meta name="keywords" content="azure devops bookmarklet utility tool size identity guid user" />
+    <meta name="version" content="0.0.1" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" type="text/css" />
+    <style>
+      .bookmarklet {
+        visibility: hidden;
+        position: relative;
+      }
+      .bookmarklet::before {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .bookmarklet::before {
+        content: "DEVELOPER ERROR: Must set display text via CSS";
+      }
+      #bookmarklet-total-size::before {
+        content: 'Get total selected "Size"';
+      }
+      #bookmarklet-user-guid::before {
+        content: "Get user identity GUID";
+      }
+      body:not(.using-mac) .mac,
+      body.using-mac .not-mac,
+      body:not(.using-firefox) .firefox,
+      body.using-firefox .not-firefox,
+      body:not(.using-mobile) .mobile {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Azure DevOps Bookmarklets</h1>
+
+      <p>Browser bookmarklet utilities for helping with Azure DevOps.</p>
+    </header>
+
+    <main>
+      <article>
+        <h2>Bookmarklets</h2>
+
+        <p class="mobile" style="color: red">
+          This will not work on mobile devices, switch to a desktop.
+        </p>
+
+        <p>
+          <b>DO NOT LEFT CLICK THESE LINKS...</b> <br />
+
+          <span class="not-firefox">
+            Ensure your bookmarks bar is open (<kbd class="not-mac">Control</kbd
+            ><kbd class="mac">⌘</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>)
+            <br />
+            <b>Click and drag</b> either link to your <b>bookmarks bar</b>:
+          </span>
+
+          <span class="firefox">
+            <b>Right click</b> either link and choose <b>Bookmark This <u>L</u>ink</b>:
+          </span>
+        </p>
+
+        <ul>
+          <li>
+            <a href="javascript:parcelRequire%3Dfunction(e%2Cr%2Ct%2Cn)%7Bvar%20i%2Co%3D%22function%22%3D%3Dtypeof%20parcelRequire%26%26parcelRequire%2Cu%3D%22function%22%3D%3Dtypeof%20require%26%26require%3Bfunction%20f(t%2Cn)%7Bif(!r%5Bt%5D)%7Bif(!e%5Bt%5D)%7Bvar%20i%3D%22function%22%3D%3Dtypeof%20parcelRequire%26%26parcelRequire%3Bif(!n%26%26i)return%20i(t%2C!0)%3Bif(o)return%20o(t%2C!0)%3Bif(u%26%26%22string%22%3D%3Dtypeof%20t)return%20u(t)%3Bvar%20c%3Dnew%20Error(%22Cannot%20find%20module%20'%22%2Bt%2B%22'%22)%3Bthrow%20c.code%3D%22MODULE_NOT_FOUND%22%2Cc%7Dp.resolve%3Dfunction(r)%7Breturn%20e%5Bt%5D%5B1%5D%5Br%5D%7C%7Cr%7D%2Cp.cache%3D%7B%7D%3Bvar%20l%3Dr%5Bt%5D%3Dnew%20f.Module(t)%3Be%5Bt%5D%5B0%5D.call(l.exports%2Cp%2Cl%2Cl.exports%2Cthis)%7Dreturn%20r%5Bt%5D.exports%3Bfunction%20p(e)%7Breturn%20f(p.resolve(e))%7D%7Df.isParcelRequire%3D!0%2Cf.Module%3Dfunction(e)%7Bthis.id%3De%2Cthis.bundle%3Df%2Cthis.exports%3D%7B%7D%7D%2Cf.modules%3De%2Cf.cache%3Dr%2Cf.parent%3Do%2Cf.register%3Dfunction(r%2Ct)%7Be%5Br%5D%3D%5Bfunction(e%2Cr)%7Br.exports%3Dt%7D%2C%7B%7D%5D%7D%3Bfor(var%20c%3D0%3Bc%3Ct.length%3Bc%2B%2B)try%7Bf(t%5Bc%5D)%7Dcatch(e)%7Bi%7C%7C(i%3De)%7Dif(t.length)%7Bvar%20l%3Df(t%5Bt.length-1%5D)%3B%22object%22%3D%3Dtypeof%20exports%26%26%22undefined%22!%3Dtypeof%20module%3Fmodule.exports%3Dl%3A%22function%22%3D%3Dtypeof%20define%26%26define.amd%3Fdefine(function()%7Breturn%20l%7D)%3An%26%26(this%5Bn%5D%3Dl)%7Dif(parcelRequire%3Df%2Ci)throw%20i%3Breturn%20f%7D(%7B%22U02X%22%3A%5Bfunction(require%2Cmodule%2Cexports)%20%7B%0A%22use%20strict%22%3Bvar%20e%3D%22https%3A%2F%2Fdev.azure.com%2F%22%3Bif(!location.href.startsWith(e))throw%20alert('1.%20Open%20Azure%20DevOps%20to%20a%20page%20with%20a%20backlog%20table.%5Cn2.%20Ensure%20the%20%22Size%22%20column%20is%20visible.%5Cn3.%20Run%20this%20bookmarklet%20again.')%2Cnew%20Error(%22Wrong%20page%22)%3Bvar%20r%3Ddocument.querySelector(%22.grid%3Ahas(.grid-row-selected%2C%20.grid-row-selected-blur)%22)%3Bif(r)%7Bvar%20t%3DArray.from(r.querySelectorAll(%22.grid-header-column%20.title%22)).findIndex(function(e)%7Breturn%20e%20instanceof%20HTMLElement%26%26%22Size%22%3D%3D%3De.innerText%7D)%3Bif(-1%3D%3D%3Dt)alert(%22Size%20column%20not%20found!%22)%3Belse%7Bvar%20n%3DArray.from(r.querySelectorAll(%22*%3Ais(.grid-row-selected%2C%20.grid-row-selected-blur)%20.grid-cell%3Anth-child(%22.concat(t%2B2%2C%22)%22))).map(function(e)%7Breturn%20e%20instanceof%20HTMLElement%3FparseInt(e.innerText%2C10)%3ANaN%7D)%2Ci%3Dn.filter(function(e)%7Breturn!Number.isNaN(e)%7D)%2Cl%3Di.reduce(function(e%2Cr)%7Breturn%20e%2Br%7D%2C0)%3Balert('Total%20%22Size%22%20of%20selected%20rows%3A%5Cn%5Cn'.concat(l%2C%22%5Cn%5Cn(%22).concat(n.length%2C%22%20items%20selected%2C%20%22).concat(i.length%2C%22%20with%20sizes%20set)%22))%7D%7Delse%20alert(%22No%20rows%20selected!%22)%3B%0A%7D%2C%7B%7D%5D%7D%2C%7B%7D%2C%5B%22U02X%22%5D%2C%20null)" class="bookmarklet" id="bookmarklet-total-size"
+              >DevOps: Get total selected size</a
+            >
+            <br />
+            When viewing a work backlog table, select some rows, then use this bookmarklet to get
+            the sum of the "Size" value of all selected rows.
+          </li>
+          <li>
+            <a href="javascript:parcelRequire%3Dfunction(e%2Cr%2Ct%2Cn)%7Bvar%20i%2Co%3D%22function%22%3D%3Dtypeof%20parcelRequire%26%26parcelRequire%2Cu%3D%22function%22%3D%3Dtypeof%20require%26%26require%3Bfunction%20f(t%2Cn)%7Bif(!r%5Bt%5D)%7Bif(!e%5Bt%5D)%7Bvar%20i%3D%22function%22%3D%3Dtypeof%20parcelRequire%26%26parcelRequire%3Bif(!n%26%26i)return%20i(t%2C!0)%3Bif(o)return%20o(t%2C!0)%3Bif(u%26%26%22string%22%3D%3Dtypeof%20t)return%20u(t)%3Bvar%20c%3Dnew%20Error(%22Cannot%20find%20module%20'%22%2Bt%2B%22'%22)%3Bthrow%20c.code%3D%22MODULE_NOT_FOUND%22%2Cc%7Dp.resolve%3Dfunction(r)%7Breturn%20e%5Bt%5D%5B1%5D%5Br%5D%7C%7Cr%7D%2Cp.cache%3D%7B%7D%3Bvar%20l%3Dr%5Bt%5D%3Dnew%20f.Module(t)%3Be%5Bt%5D%5B0%5D.call(l.exports%2Cp%2Cl%2Cl.exports%2Cthis)%7Dreturn%20r%5Bt%5D.exports%3Bfunction%20p(e)%7Breturn%20f(p.resolve(e))%7D%7Df.isParcelRequire%3D!0%2Cf.Module%3Dfunction(e)%7Bthis.id%3De%2Cthis.bundle%3Df%2Cthis.exports%3D%7B%7D%7D%2Cf.modules%3De%2Cf.cache%3Dr%2Cf.parent%3Do%2Cf.register%3Dfunction(r%2Ct)%7Be%5Br%5D%3D%5Bfunction(e%2Cr)%7Br.exports%3Dt%7D%2C%7B%7D%5D%7D%3Bfor(var%20c%3D0%3Bc%3Ct.length%3Bc%2B%2B)try%7Bf(t%5Bc%5D)%7Dcatch(e)%7Bi%7C%7C(i%3De)%7Dif(t.length)%7Bvar%20l%3Df(t%5Bt.length-1%5D)%3B%22object%22%3D%3Dtypeof%20exports%26%26%22undefined%22!%3Dtypeof%20module%3Fmodule.exports%3Dl%3A%22function%22%3D%3Dtypeof%20define%26%26define.amd%3Fdefine(function()%7Breturn%20l%7D)%3An%26%26(this%5Bn%5D%3Dl)%7Dif(parcelRequire%3Df%2Ci)throw%20i%3Breturn%20f%7D(%7B%22dL5E%22%3A%5Bfunction(require%2Cmodule%2Cexports)%20%7B%0A%22use%20strict%22%3B!function()%7Bvar%20e%3Bif((location.href.startsWith(%22https%3A%2F%2Fvssps.dev.azure.com%22)%7C%7Clocation.href.startsWith(%22https%3A%2F%2Fvssps.dev.azure.com%22))%26%26(e%3Dlocation.href.split(%22%2F%22)%5B3%5D)%2Ce%7C%7C(e%3Dprompt(%22Enter%20your%20Azure%20DevOps%20organisation%20name%22))%2Ce)for(var%20t%3DencodeURIComponent(e)%2Cn%3D%22https%3A%2F%2Fvssps.dev.azure.com%2F%22.concat(t%2C%22%2F_apis%2Fidentities%3Fapi-version%3D6.0%26searchFilter%3DGeneral%22)%2Ca%3D!1%3B%3B)%7Bvar%20r%3Bif(a%7C%7Clocation.href.split(%22%3F%22)%5B0%5D!%3D%3Dn.split(%22%3F%22)%5B0%5D%7C%7C!location.search.includes(%22%26filterValue%3D%22))%7Bvar%20o%3Dprompt(%22Enter%20search%20query%20(display%20name%2C%20account%20name%2C%20or%20unique%20name)%22)%3Bif(!o)return%3Bvar%20i%3Dn%2B%22%26filterValue%3D%22%2BencodeURIComponent(o)%3Bif(location.href!%3D%3Di)return%20alert(%22Run%20bookmarklet%20again%20to%20get%20results...%22)%2Cvoid(location.href%3Di)%7Dvar%20c%3Dfunction()%7Breturn%20alert(%22Login%20to%20Azure%20DevOps%20and%20then%20run%20bookmarklet%20again...%22)%2Clocation.href%3D%22%22.concat(%22https%3A%2F%2Fvssps.dev.azure.com%22%2C%22%2F%22).concat(t)%2Cnew%20Error(%22Azure%20DevOps%20login%20required%22)%7D%3Bif(null%3D%3D%3D(r%3Ddocument.body.textContent)%7C%7Cvoid%200%3D%3D%3Dr%3Fvoid%200%3Ar.includes(%22Please%20sign-in%20at%20least%20once%22))throw%20c()%3Bvar%20s%3Dvoid%200%3Btry%7Bs%3DJSON.parse(document.body.textContent)%7Dcatch(f)%7Bthrow%20c()%7Dvar%20l%3Ds.value.map(function(e)%7Breturn%7Bid%3Ae.id%2CdisplayName%3Ae.customDisplayName%7C%7Ce.providerDisplayName%2CisActive%3Ae.isActive%2Cemail%3Ae.properties.Mail.%24value%7D%7D)%3Bif(0!%3D%3Dl.length)%7Bvar%20u%3Dl.map(function(e%2Ct)%7Breturn%22%22.concat(t%2B1%2C%22%3A%20%22).concat(e.displayName%2C%22%20(%22).concat(e.email%2C%22)%22)%7D)%2Cp%3Dprompt(%22Enter%20the%20number%20of%20a%20result%3A%5Cn%5Cn%22.concat(u.join(%22%5Cn%22)%2C%22%5Cn%22).concat(u.length%2B1%2C%22%3A%20Change%20search%20query%5Cn%22).concat(u.length%2B2%2C%22%3A%20Exit%22))%2Cv%3DparseInt(p%7C%7C%22%22%2C10)%3Bif(Number.isNaN(v)%7C%7Cv%3C1%7C%7Cv%3Eu.length%2B1)return%3Bif(v!%3D%3Du.length%2B1)%7Ba%3D!1%3Bvar%20d%3Dl%5Bv-1%5D%2Cm%3D%22Display%20Name%3A%20%22.concat(d.displayName%2C%22%5CnEmail%3A%20%22).concat(d.email%2C%22%5CnActive%3A%20%22).concat(d.isActive%3F%22true%22%3A%22false%22%2C%22%5CnIdentity%20GUID%3A%20%22).concat(d.id%2C%22%5Cn%5CnGUID%20will%20be%20copied%20to%20the%20clipboard...%22)%2Ch%3DJSON.stringify(d%2Cnull%2C2)%3Breturn%20console.info(%22Chosen%20person%3A%22)%2Cconsole.dir(h)%2Calert(m)%2Cvoid%20navigator.clipboard.writeText(d.id)%7Da%3D!0%7Delse%20alert(%22No%20results!%22)%2Ca%3D!0%7D%7D()%3B%0A%7D%2C%7B%7D%5D%7D%2C%7B%7D%2C%5B%22dL5E%22%5D%2C%20null)" class="bookmarklet" id="bookmarklet-user-guid"
+              >DevOps: Get user identity GUID</a
+            >
+            <br />
+            This bookmarklet lets you search DevOps users and get their "identity GUID" that you can
+            use when @ mentioning them in wiki article markdown.
+          </li>
+        </ul>
+
+        <aside>
+          <p>
+            Then open the bookmark.<br />
+            You may need to login to Azure DevOps first. <br />
+            If the bookmarklet asks you to run it again, do so.
+          </p>
+        </aside>
+        <aside>
+          <p>You cannot run bookmarklets from the blank new tab page!</p>
+        </aside>
+      </article>
+    </main>
+
+    <footer>
+      <hr />
+      <a href="https://github.com/jamiegluk/azure-devops-bookmarklets">View source</a>
+    </footer>
+
+    <script defer async>
+      function preventLink(event) {
+        event.preventDefault();
+        alert("OOPS: Don't left-click the link; read instructions");
+      }
+      document.getElementById("bookmarklet-uk").addEventListener("click", preventLink);
+      document.getElementById("bookmarklet-us").addEventListener("click", preventLink);
+
+      if (navigator.platform.toLowerCase().indexOf("mac") !== -1) {
+        document.body.className += " using-mac";
+      }
+
+      if (navigator.userAgent.toLowerCase().indexOf("firefox") !== -1) {
+        document.body.className += " using-firefox";
+      }
+
+      // https://stackoverflow.com/a/11381730
+      var mobileAndTabletCheck = function () {
+        var check = false;
+        (function (a) {
+          if (
+            /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(
+              a
+            ) ||
+            /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(
+              a.substr(0, 4)
+            )
+          )
+            check = true;
+        })(navigator.userAgent || navigator.vendor || window.opera);
+        return check;
+      };
+      if (mobileAndTabletCheck()) {
+        document.body.className += " using-mobile";
+      }
+    </script>
+  </body>
+</html>
