@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: yarn build
 
-      - uses: oleksiyrudenko/gha-git-credentials@v2
+      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
           name: Jamie Gerrard Lievesley
           email: jamie@jamiegl.co.uk
