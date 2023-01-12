@@ -1,0 +1,63 @@
+{
+  "name": "azure-devops-bookmarklets",
+  "version": "0.0.1",
+  "description": "Browser bookmarklet utilities for helping with Azure DevOps",
+  "keywords": [
+    "azure",
+    "devops",
+    "bookmarklet",
+    "utility",
+    "tool",
+    "size",
+    "identity",
+    "guid",
+    "user"
+  ],
+  "homepage": "https://jamiegluk.github.io/azure-devops-bookmarklets",
+  "bugs": {
+    "url": "https://github.com/jamiegluk/azure-devops-bookmarklets/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamiegluk/azure-devops-bookmarklets.git"
+  },
+  "license": "MPL-2.0",
+  "author": "Jamie Lievesley <jamie@jamiegl.co.uk> (https://jamiegl.co.uk)",
+  "source": "src/build.ts",
+  "browser": "README.md",
+  "scripts": {
+    "build": "run-s build:b-total-size build:b-user-guid build:html",
+    "build:html": "ts-node src/build.ts",
+    "build:b-total-size": "parcel build src/bookmarklet-total-size.ts --out-dir .build --target browser  --no-source-maps",
+    "build:b-user-guid": "parcel build src/bookmarklet-user-guid.ts --out-dir .build --target browser  --no-source-maps",
+    "clean": "run-p clean:build clean:cache",
+    "clean:build": "rimraf .build/**",
+    "clean:cache": "rimraf .cache/**",
+    "deploy": "gh-pages -d .build -s index.html",
+    "lint": "prettier --check .",
+    "lint:fix": "prettier --write ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "run-s lint:fix build"
+    }
+  },
+  "resolutions": {
+    "node-forge": "^0.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "escape-goat": "^3.0.0",
+    "gh-pages": "^4.0.0",
+    "husky": "^4.3.0",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "^2.8.2",
+    "prettier-plugin-packagejson": "^2.3.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "tslib": "2.4.1",
+    "typescript": "^4.9.4"
+  },
+  "title": "Azure DevOps Bookmarklets"
+}

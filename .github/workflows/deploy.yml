@@ -1,0 +1,38 @@
+# On release on main branch, uploads site, raw from 'www' dir, via FTP
+
+name: Deploy
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || (!github.event.release.prerelease && github.event.release.target_commitish == 'main') }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12"
+      - name: Install
+        run: yarn install
+
+      - name: Lint (with fix)
+        run: yarn lint:fix
+      - name: Build
+        run: yarn build
+
+      - uses: oleksiyrudenko/gha-git-credentials@v1
+        with:
+          name: Jamie Gerrard Lievesley
+          email: jamie@jamiegl.co.uk
+          actor: JamieGerrardLievesley
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy
+        run: yarn deploy
