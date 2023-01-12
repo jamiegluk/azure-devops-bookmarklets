@@ -1,9 +1,9 @@
 # Azure DevOps Bookmarklets
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/jamiegluk/azure-devops-bookmarklets?color=blue)](https://github.com/jamiegluk/azure-devops-bookmarklets/releases)
-[![GitHub lint Workflow Status](https://img.shields.io/github/workflow/status/jamiegluk/azure-devops-bookmarklets/Lint?label=lint)](https://github.com/jamiegluk/azure-devops-bookmarklets/actions?query=workflow%3A%22Lint%22)
-[![GitHub build Workflow Status](https://img.shields.io/github/workflow/status/jamiegluk/azure-devops-bookmarklets/Build?label=build)](https://github.com/jamiegluk/azure-devops-bookmarklets/actions?query=workflow%3A%22Build%22)
-[![GitHub deploy Workflow Status](https://img.shields.io/github/workflow/status/jamiegluk/azure-devops-bookmarklets/Deploy?label=deploy)](https://github.com/jamiegluk/azure-devops-bookmarklets/actions?query=workflow%3A%22Deploy%22)
+[![GitHub lint Workflow Status](https://img.shields.io/github/actions/workflow/status/jamiegluk/azure-devops-bookmarklets/lint.yml?label=lint)](https://github.com/jamiegluk/azure-devops-bookmarklets/actions/workflows/lint.yml)
+[![GitHub build Workflow Status](https://img.shields.io/github/actions/workflow/status/jamiegluk/azure-devops-bookmarklets/build.yml?label=build)](https://github.com/jamiegluk/azure-devops-bookmarklets/actions/workflows/build.yml)
+[![GitHub deploy Workflow Status](https://img.shields.io/github/actions/workflow/status/jamiegluk/azure-devops-bookmarklets/deploy.yml?label=deploy)](https://github.com/jamiegluk/azure-devops-bookmarklets/actions/workflows/deploy.yml)
 
 Browser bookmarklet utilities for helping with Azure DevOps.
 
