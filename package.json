@@ -1,6 +1,6 @@
 {
   "name": "azure-devops-bookmarklets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Browser bookmarklet utilities for helping with Azure DevOps",
   "keywords": [
     "azure",
