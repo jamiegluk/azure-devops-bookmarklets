@@ -32,7 +32,7 @@ type Transformed = {
 (() => {
   // Get org name
   const urlBase = "https://vssps.dev.azure.com";
-  const loginUrlBase = "https://vssps.dev.azure.com";
+  const loginUrlBase = "https://dev.azure.com";
   let org: string | undefined | null;
 
   if (location.href.startsWith(urlBase) || location.href.startsWith(loginUrlBase)) {
